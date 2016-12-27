@@ -4,3 +4,4 @@ pydoc3 -p 9898              launch a python documentation server on port 9898
                             open a web browser (chrome) to the address
                             "localhost:9898"
                             to view documentation.
+git pull                    get the latest changes from git and integrate them
