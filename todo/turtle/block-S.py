@@ -128,6 +128,8 @@ sparty.right(45)
 sparty.forward(DIAG)
 
 
+print("Press enter to end program.")
+
 #waiting for user input to end the program
 input()
 

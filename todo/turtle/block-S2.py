@@ -49,5 +49,7 @@ sparty.width(30)
 for coord in points:
     sparty.goto(coord)
 
+print("Press enter to end program.")
+
 #waiting for user input to end the program
 input()
