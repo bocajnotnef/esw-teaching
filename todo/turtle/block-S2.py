@@ -1,27 +1,31 @@
 #! /usr/bin/env python3
 
 """
-Draws a block S
+The second version of drawing the block S. 
+
+I realized that in the first version it would 
+make a lot more sense to have a list of points 
+that Sparty could go to instead of messing with 
+the lengths of the S. 
+
+This makes it easy to scale either the x, or y coordinates. 
 """
 
 #import the turtle module
 #and be able to use the commands
 import turtle
 
-#common widths for the block S
-#changing these will change how the S is constructed
+#list of points from start to end
 DIAG=75
 
+CAP_WIDTH=100
 OUTSIDE_CAP=100
 INSIDE_CAP=50
-CAP_WIDTH=100
-
-OUTSIDE_WIDTH=300
 SMALL_INSIDE_WIDTH=200
 LARGE_INSIDE_WIDTH=250
-
-INSIDE_VERTICAL=125
-OUTSIDE_VERTICAL=225
+INSIDE_VERTICAL=100
+OUTSIDE_VERTICAL=200
+OUTSIDE_LINES=300
 
 #make the "turtle object"
 #this is our "turtle" that will
@@ -40,92 +44,116 @@ sparty.sety(250)
 
 #put the pen "down" so that we can start drawing
 sparty.pendown()
+print(sparty.position())
 
 #Set the pen width
 sparty.width(20)
 
 #Draw the top part of the block S
-sparty.forward(OUTSIDE_WIDTH)
+sparty.forward(OUTSIDE_LINES)
+sparty.position()
 
-#rotate right 45 degrees and draw the diag down
+#right 45 degrees and draw the next part
 sparty.right(45)
 sparty.forward(DIAG)
+sparty.position()
 
-#drawing on the right side
+#drawing down
 sparty.right(45)
 sparty.forward(OUTSIDE_CAP)
+sparty.position()
 
-#drawing the cap of the top part of the S
+#drawing left
 sparty.right(90)
 sparty.forward(CAP_WIDTH)
+sparty.position()
 
-#draw up to the inside of the S
+#draw up from the edge of the S
 sparty.right(90)
 sparty.forward(INSIDE_CAP)
+sparty.position()
 
-#head back towards the middle
+#angle back
 sparty.left(90)
 sparty.forward(SMALL_INSIDE_WIDTH)
+sparty.position()
 
 #draw down the inside of the top of the S
 sparty.left(90)
 sparty.forward(INSIDE_VERTICAL)
+sparty.position()
 
-#draw the top the middle of the S
+
+#draw the middle of the S
 sparty.left(90)
 sparty.forward(LARGE_INSIDE_WIDTH)
+sparty.position()
 
 #angle down
 sparty.right(45)
 sparty.forward(DIAG)
+sparty.position()
 
-#draw the outside right vertical line
+#angle down again
 sparty.right(45)
 sparty.forward(OUTSIDE_VERTICAL)
+sparty.position()
 
 #bottom right diag
 sparty.right(45)
 sparty.forward(DIAG)
+sparty.position()
 
 #bottom of S
 sparty.right(45)
-sparty.forward(OUTSIDE_WIDTH)
+sparty.forward(OUTSIDE_LINES)
+sparty.position()
 
 #bottom left diag
 sparty.right(45)
 sparty.forward(DIAG)
+sparty.position()
 
-#the bottom cap of the S
 sparty.right(45)
 sparty.forward(OUTSIDE_CAP)
+sparty.position()
+
 sparty.right(90)
 sparty.forward(CAP_WIDTH)
+sparty.position()
+
 sparty.right(90)
 sparty.forward(INSIDE_CAP)
+sparty.position()
 
-#The smaller bottom inside
 sparty.left(90)
 sparty.forward(SMALL_INSIDE_WIDTH)
+sparty.position()
 
 #draw up the inside of the bottom of the S
 sparty.left(90)
 sparty.forward(INSIDE_VERTICAL)
+sparty.position()
 
-#And draw the larger middle
 sparty.left(90)
 sparty.forward(LARGE_INSIDE_WIDTH)
+sparty.position()
 
 #diag up
 sparty.right(45)
 sparty.forward(DIAG)
+sparty.position()
 
-#one last up on the left side
+#one last up
 sparty.right(45)
 sparty.forward(OUTSIDE_VERTICAL)
+sparty.position()
 
-#and one last diag to bring us back to the beginning.
+#last line
 sparty.right(45)
 sparty.forward(DIAG)
+sparty.position()
+
 
 
 #waiting for user input to end the program
